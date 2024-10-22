@@ -1,6 +1,6 @@
 import json
 import tkinter as tk
-from tkinter import messagebox, scrolledtext, PanedWindow
+from tkinter import messagebox, scrolledtext, PanedWindow, PhotoImage
 
 class JsonFormatterApp:
     def __init__(self, master):
@@ -191,7 +191,12 @@ class JsonFormatterApp:
 
 # Create the main window
 root = tk.Tk()
+
+icon = PhotoImage(file='imgs/json_icon.png')
+
+root.iconphoto(False, icon)
 root.title("JSON Formatter")
+root.geometry("400x300")
 
 # Instantiate the application
 app = JsonFormatterApp(root)
