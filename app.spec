@@ -42,5 +42,5 @@ coll = COLLECT(
     a.datas,
     strip=False,
     upx=True,
-    name='dist/my_app'
+    name='dist/app'
 )
