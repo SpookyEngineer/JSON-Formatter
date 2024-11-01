@@ -5,8 +5,43 @@
 The JSON Formatter is a Python application that allows users to paste JSON text and format it into a more readable structure. 
 It provides a graphical user interface (GUI) built with Tkinter, enabling users to easily input, format, search, and copy formatted JSON.
 
-> **Important:** A prepackaged executable is included in the output folder.  
-> This allows you to run the application without the need to manually execute the code, making it easier to use the application.
+## Prepackaged Executables
+There are artifacts available in the Actions tab, one for Windows and one for Linux (Ubuntu).
+After your GitHub Actions workflow runs successfully and uploads the build artifacts, you can find the files in the following way:
+
+1. **Access the Actions Tab**:
+   - Click on the **"Actions"** tab located at the top of your repository page. This tab shows all the workflows that have run.
+
+2. **Select the Latest Workflow Run**:
+   - In the Actions tab, you will see a list of recent workflow runs. Click on the most recent one that corresponds to the push that triggered the build.
+
+3. **View Workflow Details**:
+   - Once you're in the specific run's details, you'll see a list of all the steps that were executed during that run. 
+
+4. **Download Artifacts**:
+   - Scroll down to the bottom of the page where you will find a section labeled **"Artifacts"**. This section lists the artifacts uploaded during the run, including your Windows and Linux executables.
+   - Click on the artifact name (e.g., `windows-executable` or `linux-executable`) to download it as a zip file.
+
+5. **Extract and Use the Files**:
+   - Once downloaded, extract the zip file to access the executables you built.
+
+### Further Instructions for Linux
+**After downloading the Linux file:**
+
+1. Open a terminal.
+2. Change to the directory where the executable is located:
+   ```bash
+   cd ~/Downloads
+   ```
+3. Make the executable runnable:
+   ```bash
+   chmod +x my_app
+   ```
+4. Run the application:
+   ```bash
+   ./my_app
+   ```
+
 
 ## Features
 
