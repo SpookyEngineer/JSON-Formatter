@@ -40,13 +40,21 @@ class JsonFormatterApp:
         # Add the output frame to the paned window
         self.paned_window.add(output_frame)
 
+        # Create a frame to hold buttons side by side
+        button_frame = tk.Frame(self.master)
+        button_frame.pack(pady=5)
+
         # Create a button to format the JSON
-        format_button = tk.Button(self.master, text="Format JSON", command=self.format_json)
-        format_button.pack(pady=5)
+        format_button = tk.Button(button_frame, text="Format JSON", command=self.format_json)
+        format_button.pack(side=tk.LEFT, padx=5)
 
         # Create a button to copy the formatted JSON to the clipboard
-        copy_button = tk.Button(self.master, text="Copy to Clipboard", command=self.copy_to_clipboard)
-        copy_button.pack(pady=5)
+        copy_button = tk.Button(button_frame, text="Copy to Clipboard", command=self.copy_to_clipboard)
+        copy_button.pack(side=tk.LEFT, padx=5)
+
+        # Create a button to clear the input JSON
+        clear_button = tk.Button(button_frame, text="Clear Input", command=self.clear_input)
+        clear_button.pack(side=tk.LEFT, padx=5)
 
         # Label to show "Copied!" message
         self.copied_label = tk.Label(self.master, text="", fg="green")
@@ -102,6 +110,10 @@ class JsonFormatterApp:
             
         except json.JSONDecodeError as e:
             messagebox.showerror("Invalid JSON", f"Error parsing JSON: {e}")
+
+    def clear_input(self):
+        # Clear the JSON input text box
+        self.input_text.delete("1.0", tk.END)
 
     def copy_to_clipboard(self):
         # Copy the content of the output_text to the clipboard
@@ -193,9 +205,9 @@ class JsonFormatterApp:
 root = tk.Tk()
 
 root.title("JSON Formatter")
+root.geometry("800x600")
 
-# Instantiate the application
+# Start the application
 app = JsonFormatterApp(root)
 
-# Start the GUI event loop
 root.mainloop()
