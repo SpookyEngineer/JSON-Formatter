@@ -24,8 +24,8 @@ jobs:
 
       - name: Clean previous builds
         run: |
-          if [ -d "build" ]; then rmdir /s /q build; fi
-          if [ -d "dist" ]; then rmdir /s /q dist; fi
+          if (Test-Path -Path "build") { Remove-Item -Recurse -Force "build" }
+          if (Test-Path -Path "dist") { Remove-Item -Recurse -Force "dist" }
 
       - name: Build Windows executable
         run: |
@@ -71,7 +71,7 @@ jobs:
       - name: Store Linux executable
         run: |
           mkdir -p build/linux
-          mv dist/my_app/* build/linux/
+          if [ -d "dist/my_app" ]; then mv dist/my_app/* build/linux/; else mv dist/my_app build/linux/; fi
 
       - name: Upload Linux artifact
         uses: actions/upload-artifact@v3
