@@ -2,8 +2,9 @@
 
 ## Overview
 
-The JSON Formatter is a Python application that allows users to paste JSON text and format it into a more readable structure. 
-It provides a graphical user interface (GUI) built with Tkinter, enabling users to easily input, format, search, and copy formatted JSON.
+The JSON Formatter is a Python application that allows users to paste JSON text and format it into a more readable structure.  
+It provides a graphical user interface (GUI) built with Tkinter, enabling users to easily input, format, search, and copy formatted JSON.  
+**I created this program to format JSON objects locally as to not risk the leaking of sensitive data.**
 
 ## Prepackaged Executables
 There are artifacts available in the Actions tab, one for Windows and one for Linux (Ubuntu).
@@ -51,7 +52,7 @@ After your GitHub Actions workflow runs successfully and uploads the build artif
 - **Copy to Clipboard:** Easily copy the formatted JSON to your clipboard for further use.
 - **User-friendly Interface:** A simple and intuitive GUI built with Tkinter.
 
-## Requirements
+## Requirements For Running The Code
 
 - Python 3.x
 - Tkinter (usually included with Python installations)
@@ -72,7 +73,7 @@ After your GitHub Actions workflow runs successfully and uploads the build artif
 3. **Run the application:**
 
    ```bash
-   python json_formatter.py
+   python app.py
    ```
 
 ## Usage
